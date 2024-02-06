@@ -4,22 +4,18 @@ using System.Text;
 
 namespace TrafficSimulator
 {
-    class Vehicle : DynamicRoadItem
+    abstract class Vehicle : DynamicRoadItem
     {
-        private static double currentSpeed;
-        private static int currentDirection;
+        private double currentSpeed = 0.0;
+        private double desiredSpeed;
+        private static int currentDirection = 0;
         private static int[] currentLocation;
 
 
 
-        public void Accelerate(int toSpeed) { 
-            //TODO
-        }
+        protected abstract void Accelerate(int toSpeed);
 
-        public void Decelerate(int toSpeed)
-        {
-            //TODO
-        }
+        protected abstract void Decelerate(int toSpeed);
 
         public void Turn(int direction, int degrees)
         {
@@ -30,15 +26,39 @@ namespace TrafficSimulator
             return currentSpeed;
         }
 
-        public double GetSpeedLimit(){
+        /* public double GetSpeedLimit(){
             //TODO
+        } */
+
+        public void SetDesiredSpeed(double mph){
+            desiredSpeed = mph;
         }
 
-        public void SetDesiredSpeed(double speed){
-            currentSpeed = speed;
+        protected void SetCurrentSpeed(double speed){
+            if(currentSpeed <= speed){
+                if(speed > desiredSpeed){
+                    currentSpeed =desiredSpeed;
+                }else{
+                    currentSpeed =  speed;
+                }
+            }else{
+                if(speed < desiredSpeed){
+                    currentSpeed = desiredSpeed;
+                }else{
+                    currentSpeed = speed;
+                }
+            }
         }
 
-        public override Update(int seconds){
+        public void UpdateSpeed(int seconds){
+            if(currentSpeed > desiredSpeed){
+                Decelerate(seconds);
+            }else if(currentSpeed < desiredSpeed){
+                Accelerate(seconds);
+            }
+        }
+
+        public override void Update(int seconds){
             //TODO
         }
     }

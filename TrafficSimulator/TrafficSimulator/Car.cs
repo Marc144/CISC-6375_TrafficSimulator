@@ -6,6 +6,14 @@ namespace TrafficSimulator
 {
     class Car : Vehicle
     {
-        //TODO
+        protected override void Accelerate(int secondsDelta)
+        {
+            SetCurrentSpeed(GetCurrentSpeed() + Constants.AccRate * secondsDelta * Constants.MpsToMph);
+        }
+
+        protected override void Decelerate(int secondsDelta)
+        {
+            SetCurrentSpeed(GetCurrentSpeed() - Constants.AccRate * secondsDelta * Constants.MpsToMph);
+        }
     }
 }

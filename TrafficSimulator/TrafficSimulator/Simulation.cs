@@ -6,7 +6,7 @@ namespace TrafficSimulator{
 
     class Simulation
     {
-        private static List<DynamicRoadItems> roadItems;
+        private static List<DynamicRoadItem> roadItems;
 
         public void Update(int seconds){
             //TODO

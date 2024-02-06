@@ -12,7 +12,7 @@ namespace TrafficSimulator{
         private static string lit;
         private static int timeOn;
 
-        public void Update(int seconds){
+        public override void Update(int seconds){
             //TODO
         }
 

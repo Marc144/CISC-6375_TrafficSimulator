@@ -4,10 +4,8 @@ using System.Text;
 
 namespace TrafficSimulator{
 
-    class DynamicRoadItem : RoadItem
+    abstract class DynamicRoadItem : RoadItem
     {
-        public abstract UpDate(int seconds){
-            //TODO
-        }
+        public abstract void Update(int seconds);
     }
 }
