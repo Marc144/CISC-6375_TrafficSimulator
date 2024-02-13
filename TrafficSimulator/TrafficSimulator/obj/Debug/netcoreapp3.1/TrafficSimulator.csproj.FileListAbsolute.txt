@@ -24,3 +24,4 @@ C:\Users\Darcm\OneDrive\GSAS_Spring_2024\Object_Software_Design\TrafficSimulator
 C:\Users\Darcm\OneDrive\GSAS_Spring_2024\Object_Software_Design\TrafficSimulator\TrafficSimulator\obj\Debug\netcoreapp3.1\TrafficSimulator.dll
 C:\Users\Darcm\OneDrive\GSAS_Spring_2024\Object_Software_Design\TrafficSimulator\TrafficSimulator\obj\Debug\netcoreapp3.1\TrafficSimulator.pdb
 C:\Users\Darcm\OneDrive\GSAS_Spring_2024\Object_Software_Design\TrafficSimulator\TrafficSimulator\obj\Debug\netcoreapp3.1\TrafficSimulator.genruntimeconfig.cache
+C:\Users\Darcm\OneDrive\GSAS_Spring_2024\Object_Software_Design\TrafficSimulator\TrafficSimulator\obj\Debug\netcoreapp3.1\TrafficSimulator.csproj.AssemblyReference.cache
