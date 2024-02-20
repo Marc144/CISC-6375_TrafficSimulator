@@ -8,12 +8,12 @@ namespace TrafficSimulator
     {
         protected override void Accelerate(int secondsDelta)
         {
-            SetCurrentSpeed(GetCurrentSpeed() + Constants.AccRate * secondsDelta * Constants.MpsToMph);
+            SetCurrentSpeed(GetCurrentSpeed() + Constants.AccRate * secondsDelta);
         }
 
         protected override void Decelerate(int secondsDelta)
         {
-            SetCurrentSpeed(GetCurrentSpeed() - Constants.AccRate * secondsDelta * Constants.MpsToMph);
+            SetCurrentSpeed(GetCurrentSpeed() - Constants.AccRate * secondsDelta);
         }
     }
 }

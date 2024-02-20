@@ -4,8 +4,9 @@ using System.Text;
 
 namespace TrafficSimulator{
 
-    class GUI
+    abstract class GUI : ISimInput, ISimOutput
     {
-        
+        public abstract double GetSpeed(Vehicle v);
+        public abstract void SetSpeedLimit(Vehicle v, double speed);
     }
 }

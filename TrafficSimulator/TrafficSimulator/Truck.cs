@@ -15,18 +15,18 @@ namespace TrafficSimulator
         protected override void Accelerate(int secondsDelta)
         {
             if(loadWeight <= 5){
-                SetCurrentSpeed(GetCurrentSpeed() + Constants.AccRateEmpty * secondsDelta * Constants.MpsToMph);
+                SetCurrentSpeed(GetCurrentSpeed() + Constants.AccRateEmpty * secondsDelta);
             }else{
-                SetCurrentSpeed(GetCurrentSpeed() + Constants.AccRateFull * secondsDelta * Constants.MpsToMph);
+                SetCurrentSpeed(GetCurrentSpeed() + Constants.AccRateFull * secondsDelta);
             }
         }
 
         protected override void Decelerate(int secondsDelta)
         {
             if(loadWeight <= 5){
-                SetCurrentSpeed(GetCurrentSpeed() - Constants.DecRateEmpty * secondsDelta * Constants.MpsToMph);
+                SetCurrentSpeed(GetCurrentSpeed() - Constants.DecRateEmpty * secondsDelta);
             }else{
-                SetCurrentSpeed(GetCurrentSpeed() - Constants.DecRateFull * secondsDelta * Constants.MpsToMph);
+                SetCurrentSpeed(GetCurrentSpeed() - Constants.DecRateFull * secondsDelta);
             }
         }
 

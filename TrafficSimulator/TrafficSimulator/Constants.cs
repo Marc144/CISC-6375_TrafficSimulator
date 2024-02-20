@@ -13,6 +13,7 @@ namespace TrafficSimulator
         public const double DecRateEmpty = 5.0;
         public const double DecRateFull = 2.0;
         public const double MpsToMph = 2.237;
+        public const double MpsToKph = 3.6;
 
     }
 }
