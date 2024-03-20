@@ -14,6 +14,10 @@ namespace TrafficSimulator
         public const double DecRateFull = 2.0;
         public const double MpsToMph = 2.237;
         public const double MpsToKph = 3.6;
+        public const double MetersToMiles = 0.000621371;
+        public const double MetersToKm = 0.001;
+        public const int CharMapSize = 40;
+        public const double WorldSize = 200.0;
 
     }
 }
