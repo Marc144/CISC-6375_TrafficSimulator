@@ -24,6 +24,14 @@ namespace TrafficSimulator
                                 cm.map[y][x] = '|';
                                 cm.map[y][x + 2] = '|';
                                 cm.map[y][x + 4] = '|';
+                                foreach (DynamicRoadItem item in road.GetRoadItems())
+                                {
+                                    int item_pos = (int)Conversions.WClengthToCClength(item.GetMileMarker());
+                                    if (y == item_pos)
+                                    {
+                                        cm.map[y][x + 5] = item.PrintRoadItem();
+                                    }
+                                }
                             }
                             distance += 1;
                         }

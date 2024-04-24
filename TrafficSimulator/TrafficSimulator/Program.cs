@@ -89,6 +89,7 @@ namespace TrafficSimulator
 
 
             //lines for HW6
+            /*
             GUI simInput;
             Map map = new Map();
             IPrintDriver cp = new ConsolePrint();
@@ -103,6 +104,46 @@ namespace TrafficSimulator
                 string s = new string(cm.map[i]);
                 Console.WriteLine(s);
             }
+            */
+
+            //lines for final project
+            GUI simInput;
+            Map map = new Map();
+            IPrintDriver cp = new ConsolePrint();
+            simInput = new MetricGUI();
+            CharMatrix cm = new CharMatrix();
+            Road Uptown = simInput.CreateRoad("Uptown", 0.0, -0.09, .180, Heading.North);
+            RoadItem firstLight = new Light(3,3,3,"green",(.180/3)/Constants.MetersToKm );
+            RoadItem secondLight = new Light(3, 3, 3, "green", (2 *.180 / 3)/Constants.MetersToKm);
+            Uptown.AddRoadItem(firstLight);
+            Uptown.AddRoadItem(secondLight);
+            map.AddRoad(Uptown);
+            Simulation sim = new Simulation();
+            sim.AddRoadItem(firstLight);
+            sim.AddRoadItem(secondLight);
+            Console.WriteLine("Enter Desired Run Time: ");
+            string simulation_durationString = Console.ReadLine();
+            int simulation_duration = 0;
+            bool inValidNumber = true;
+            while (inValidNumber)
+            {
+                int convertedSpeedLimit;
+                bool isNumeric = int.TryParse(simulation_durationString, out convertedSpeedLimit);
+                if (isNumeric)
+                {
+                    inValidNumber = false;
+                    simulation_duration = convertedSpeedLimit;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid Input!");
+                    Console.WriteLine("Enter speed Limit: ");
+                    simulation_durationString = Console.ReadLine();
+                }
+            }
+            sTimer runtime = new sTimer(1000,sim,map, cm, cp, simulation_duration);
+            runtime.runSimulation();
+
         }
     }
 }

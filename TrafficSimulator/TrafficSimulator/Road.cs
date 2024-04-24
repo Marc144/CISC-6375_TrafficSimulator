@@ -15,6 +15,7 @@ namespace TrafficSimulator{
         private double ylocation;
         private Heading heading;
         public static int NumOfRoads= 0;
+        private List<RoadItem> roadItems = new List<RoadItem>();
 
 
 
@@ -57,7 +58,11 @@ namespace TrafficSimulator{
             print.PrintRoad(this, o);
         }
         public void AddRoadItem(RoadItem roadItem){
-            //TODO
+            roadItems.Add(roadItem);
+        }
+
+        public List<RoadItem> GetRoadItems() {
+            return roadItems;
         }
     }
 }

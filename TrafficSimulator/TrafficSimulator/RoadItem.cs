@@ -38,5 +38,9 @@ namespace TrafficSimulator{
         public void setPrevious(RoadItem item){
             prevItem = item;
         }
+
+        public virtual char PrintRoadItem() {
+            return ' ';
+        }
     }
 }

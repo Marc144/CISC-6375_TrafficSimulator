@@ -6,14 +6,20 @@ namespace TrafficSimulator{
 
     class Simulation
     {
-        private static List<DynamicRoadItem> roadItems;
+        private static List<RoadItem> roadItems = new List<RoadItem>();
 
+
+        public Simulation() { 
+        
+        }
         public void Update(int seconds){
-            //TODO
+            foreach (DynamicRoadItem item in roadItems) {
+                item.Update(seconds);
+            }
         }
 
-        public void AddDynamicRoadItem(DynamicRoadItem item){
-            //TODO
+        public void AddRoadItem(RoadItem item){
+            roadItems.Add(item);
         }
     }
 }
